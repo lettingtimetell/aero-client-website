@@ -223,6 +223,13 @@ hr {
   white-space: nowrap;
 }
 
+/* The cube logo beside the footer's wordmark. */
+.brand-logo {
+  width: 2rem;
+  height: 2rem;
+  flex: none;
+}
+
 .page-top {
   padding-top: clamp(1.4rem, 3vw, 2rem);
 }
@@ -351,6 +358,25 @@ hr {
   justify-items: center;
 }
 
+/* The cube logo to the left of the title, both sized from the title's size (1em here). Only on a
+   phone too narrow for one line does the cube wrap above the title. */
+.hero-lockup {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  column-gap: clamp(0.7rem, 1.8vw, 1.5rem);
+  row-gap: 0.6rem;
+  margin: 0 0 0.3em;
+  font-size: clamp(3.4rem, 9vw, 6.6rem);
+}
+
+.hero-logo {
+  width: 1.3em;
+  height: 1.3em;
+  flex: none;
+}
+
 .hero-title {
   font-family: var(--font-display);
   font-style: italic;
@@ -358,8 +384,24 @@ hr {
   font-size: clamp(3.4rem, 9vw, 6.6rem);
   letter-spacing: -0.01em;
   line-height: 1;
-  margin: 0 0 0.3em;
+  margin: 0;
   text-shadow: 0 1px 3px rgba(6, 10, 38, 0.55), 0 2px 28px rgba(6, 10, 38, 0.45);
+}
+
+/* The title in the logo's colours: pale aqua through mint to lime, the cube's diagonal. The padding
+   (cancelled by the negative margin) keeps the italic letters' overhang inside the gradient, and a
+   drop-shadow filter stands in for text-shadow, which would show through the clipped letters. */
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .hero-title {
+    margin: -0.1em -0.12em;
+    padding: 0.1em 0.12em;
+    background: linear-gradient(100deg, #eafdff 0%, #b6f1ff 38%, #a8f1d9 72%, #dcfbb2 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: none;
+    filter: drop-shadow(0 1px 2px rgba(6, 10, 38, 0.55)) drop-shadow(0 2px 24px rgba(6, 10, 38, 0.38));
+  }
 }
 
 .hero-lede {

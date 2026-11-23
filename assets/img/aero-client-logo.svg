@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="162 142 700 700" width="1024" height="1024">
+  <title>Aero Client</title>
+  <defs>
+    <clipPath id="c-clip"><path d="M569.2,195.0 L740.6,294.0 A114.3,114.3 0 0 1 797.8,393.0 L797.8,591.0 A114.3,114.3 0 0 1 740.6,690.0 L569.2,789.0 A114.3,114.3 0 0 1 454.8,789.0 L283.4,690.0 A114.3,114.3 0 0 1 226.2,591.0 L226.2,393.0 A114.3,114.3 0 0 1 283.4,294.0 L454.8,195.0 A114.3,114.3 0 0 1 569.2,195.0 Z"/></clipPath>
+    <clipPath id="c-top"><path d="M512.0,162.0 L797.8,327.0 L512.0,492.0 L226.2,327.0 Z"/></clipPath>
+    <linearGradient id="c-base" gradientUnits="userSpaceOnUse" x1="260" y1="170" x2="780" y2="840"><stop offset="0" stop-color="#b8f8ff"/><stop offset="0.2" stop-color="#52dcf4"/><stop offset="0.42" stop-color="#1ec4d4"/><stop offset="0.62" stop-color="#1ec89d"/><stop offset="0.82" stop-color="#58e08c"/><stop offset="1" stop-color="#cff98a"/></linearGradient>
+    <radialGradient id="c-hot" gradientUnits="userSpaceOnUse" cx="410" cy="248" r="135"><stop offset="0" stop-color="#ffffff" stop-opacity="0.95"/><stop offset="0.4" stop-color="#ffffff" stop-opacity="0.42"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></radialGradient>
+    <radialGradient id="c-sheenL" gradientUnits="userSpaceOnUse" cx="294.8" cy="432.6" r="235"><stop offset="0" stop-color="#ffffff" stop-opacity="0.55"/><stop offset="0.45" stop-color="#ffffff" stop-opacity="0.22"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></radialGradient>
+    <linearGradient id="c-streakR" gradientUnits="userSpaceOnUse" x1="0" y1="396.3" x2="0" y2="607.5"><stop offset="0" stop-color="#ffffff" stop-opacity="0.44"/><stop offset="0.55" stop-color="#ffffff" stop-opacity="0.19"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></linearGradient>
+    <filter id="c-glossBlur" filterUnits="userSpaceOnUse" x="0" y="0" width="1024" height="1024"><feGaussianBlur stdDeviation="8"/></filter>
+    <filter id="c-topGlossBlur" filterUnits="userSpaceOnUse" x="0" y="0" width="1024" height="1024"><feGaussianBlur stdDeviation="6"/></filter>
+    <linearGradient id="c-refract" gradientUnits="userSpaceOnUse" x1="0" y1="617.0" x2="0" y2="822.0"><stop offset="0" stop-color="#efffc2" stop-opacity="0"/><stop offset="0.55" stop-color="#efffc2" stop-opacity="0.35"/><stop offset="1" stop-color="#efffc2" stop-opacity="0.95"/></linearGradient>
+    <radialGradient id="c-glow" gradientUnits="userSpaceOnUse" cx="610" cy="820" r="350"><stop offset="0" stop-color="#f3ffb0" stop-opacity="0.9"/><stop offset="0.45" stop-color="#f3ffb0" stop-opacity="0.32"/><stop offset="1" stop-color="#f3ffb0" stop-opacity="0"/></radialGradient>
+    <linearGradient id="c-leftShade" gradientUnits="userSpaceOnUse" x1="226.2" y1="0" x2="396.2" y2="0"><stop offset="0" stop-color="#03363d" stop-opacity="0.14"/><stop offset="1" stop-color="#03363d" stop-opacity="0"/></linearGradient>
+    <linearGradient id="c-rightShade" gradientUnits="userSpaceOnUse" x1="797.8" y1="0" x2="577.8" y2="0"><stop offset="0" stop-color="#022c36" stop-opacity="0.26"/><stop offset="1" stop-color="#022c36" stop-opacity="0"/></linearGradient>
+    <linearGradient id="c-bandL" gradientUnits="userSpaceOnUse" x1="369.1" y1="409.5" x2="281.6" y2="561.0"><stop offset="0" stop-color="#ffffff" stop-opacity="0.42"/><stop offset="0.4" stop-color="#ffffff" stop-opacity="0.14"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></linearGradient>
+    <linearGradient id="c-bandR" gradientUnits="userSpaceOnUse" x1="654.9" y1="409.5" x2="742.4" y2="561.0"><stop offset="0" stop-color="#ffffff" stop-opacity="0.2"/><stop offset="0.4" stop-color="#ffffff" stop-opacity="0.06"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></linearGradient>
+    <linearGradient id="c-topGloss" gradientUnits="userSpaceOnUse" x1="0" y1="166.0" x2="0" y2="388.0"><stop offset="0" stop-color="#ffffff" stop-opacity="0.88"/><stop offset="0.6" stop-color="#ffffff" stop-opacity="0.38"/><stop offset="1" stop-color="#ffffff" stop-opacity="0.04"/></linearGradient>
+    <linearGradient id="c-edgeFront" gradientUnits="userSpaceOnUse" x1="226.2" y1="0" x2="797.8" y2="0"><stop offset="0" stop-color="#ffffff" stop-opacity="0.08"/><stop offset="0.42" stop-color="#ffffff" stop-opacity="0.26"/><stop offset="1" stop-color="#ffffff" stop-opacity="0.05"/></linearGradient>
+    <linearGradient id="c-edgeV" gradientUnits="userSpaceOnUse" x1="0" y1="492.0" x2="0" y2="822.0"><stop offset="0" stop-color="#ffffff" stop-opacity="0.24"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></linearGradient>
+    <radialGradient id="c-corner" gradientUnits="userSpaceOnUse" cx="512.0" cy="492.0" r="78"><stop offset="0" stop-color="#ffffff" stop-opacity="0.34"/><stop offset="0.5" stop-color="#ffffff" stop-opacity="0.12"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></radialGradient>
+    <linearGradient id="c-rim" gradientUnits="userSpaceOnUse" x1="226.2" y1="162.0" x2="797.8" y2="822.0"><stop offset="0" stop-color="#ffffff"/><stop offset="0.45" stop-color="#c9fff6"/><stop offset="1" stop-color="#0a4f58"/></linearGradient>
+    <filter id="c-soft" filterUnits="userSpaceOnUse" x="0" y="0" width="1024" height="1024"><feGaussianBlur stdDeviation="9"/></filter>
+    <filter id="c-streakBlur" filterUnits="userSpaceOnUse" x="0" y="0" width="1024" height="1024"><feGaussianBlur stdDeviation="15"/></filter>
+    <filter id="c-edgeBlur" filterUnits="userSpaceOnUse" x="0" y="0" width="1024" height="1024"><feGaussianBlur stdDeviation="12"/></filter>
+    <filter id="c-rimBlur" filterUnits="userSpaceOnUse" x="0" y="0" width="1024" height="1024"><feGaussianBlur stdDeviation="11"/></filter>
+  </defs>
+  <path d="M569.2,195.0 L740.6,294.0 A114.3,114.3 0 0 1 797.8,393.0 L797.8,591.0 A114.3,114.3 0 0 1 740.6,690.0 L569.2,789.0 A114.3,114.3 0 0 1 454.8,789.0 L283.4,690.0 A114.3,114.3 0 0 1 226.2,591.0 L226.2,393.0 A114.3,114.3 0 0 1 283.4,294.0 L454.8,195.0 A114.3,114.3 0 0 1 569.2,195.0 Z" fill="none" stroke="#05515b" stroke-width="13" stroke-linejoin="round" opacity=".9"/>
+  <g clip-path="url(#c-clip)">
+    <path d="M569.2,195.0 L740.6,294.0 A114.3,114.3 0 0 1 797.8,393.0 L797.8,591.0 A114.3,114.3 0 0 1 740.6,690.0 L569.2,789.0 A114.3,114.3 0 0 1 454.8,789.0 L283.4,690.0 A114.3,114.3 0 0 1 226.2,591.0 L226.2,393.0 A114.3,114.3 0 0 1 283.4,294.0 L454.8,195.0 A114.3,114.3 0 0 1 569.2,195.0 Z" fill="url(#c-base)"/>
+    <path d="M226.2,327.0 L512.0,492.0 L512.0,822.0 L226.2,657.0 Z" fill="url(#c-leftShade)"/>
+    <path d="M512.0,492.0 L797.8,327.0 L797.8,657.0 L512.0,822.0 Z" fill="url(#c-rightShade)"/>
+    <g filter="url(#c-soft)">
+      <path d="M512.0,162.0 L797.8,327.0 L512.0,492.0 L226.2,327.0 Z" fill="#ffffff" fill-opacity=".38"/>
+      <path d="M226.2,327.0 L512.0,492.0 L512.0,822.0 L226.2,657.0 Z" fill="#00515e" fill-opacity=".12"/>
+      <path d="M512.0,492.0 L797.8,327.0 L797.8,657.0 L512.0,822.0 Z" fill="#00515e" fill-opacity=".43"/>
+      <path d="M226.2,327.0 L512.0,492.0 L512.0,822.0 L226.2,657.0 Z" fill="url(#c-bandL)"/>
+      <path d="M512.0,492.0 L797.8,327.0 L797.8,657.0 L512.0,822.0 Z" fill="url(#c-bandR)"/>
+    </g>
+    <path d="M569.2,195.0 L740.6,294.0 A114.3,114.3 0 0 1 797.8,393.0 L797.8,591.0 A114.3,114.3 0 0 1 740.6,690.0 L569.2,789.0 A114.3,114.3 0 0 1 454.8,789.0 L283.4,690.0 A114.3,114.3 0 0 1 226.2,591.0 L226.2,393.0 A114.3,114.3 0 0 1 283.4,294.0 L454.8,195.0 A114.3,114.3 0 0 1 569.2,195.0 Z" fill="url(#c-glow)"/>
+    <path d="M512.0,162.0 L797.8,327.0 L512.0,492.0 L226.2,327.0 Z" fill="url(#c-hot)"/>
+    <ellipse cx="490" cy="270" rx="252" ry="102" fill="url(#c-topGloss)" filter="url(#c-topGlossBlur)" clip-path="url(#c-top)"/>
+    <path d="M226.2,327.0 L512.0,492.0 L512.0,822.0 L226.2,657.0 Z" fill="url(#c-sheenL)" filter="url(#c-glossBlur)"/>
+    <path d="M709.2,411.1 L757.8,383.1 L757.8,594.3 L709.2,622.3 Z" fill="url(#c-streakR)" filter="url(#c-streakBlur)"/>
+    <path d="M569.2,195.0 L740.6,294.0 A114.3,114.3 0 0 1 797.8,393.0 L797.8,591.0 A114.3,114.3 0 0 1 740.6,690.0 L569.2,789.0 A114.3,114.3 0 0 1 454.8,789.0 L283.4,690.0 A114.3,114.3 0 0 1 226.2,591.0 L226.2,393.0 A114.3,114.3 0 0 1 283.4,294.0 L454.8,195.0 A114.3,114.3 0 0 1 569.2,195.0 Z" fill="none" stroke="url(#c-refract)" stroke-width="22" filter="url(#c-rimBlur)"/>
+    <g filter="url(#c-edgeBlur)">
+      <path d="M226.2,327.0 L512.0,492.0 L797.8,327.0" fill="none" stroke="url(#c-edgeFront)" stroke-width="36" stroke-linejoin="round" stroke-linecap="round"/>
+      <path d="M512.0,492.0 L512.0,822.0" fill="none" stroke="url(#c-edgeV)" stroke-width="32" stroke-linecap="round"/>
+    </g>
+    <circle cx="512.0" cy="492.0" r="78" fill="url(#c-corner)"/>
+    <path d="M569.2,195.0 L740.6,294.0 A114.3,114.3 0 0 1 797.8,393.0 L797.8,591.0 A114.3,114.3 0 0 1 740.6,690.0 L569.2,789.0 A114.3,114.3 0 0 1 454.8,789.0 L283.4,690.0 A114.3,114.3 0 0 1 226.2,591.0 L226.2,393.0 A114.3,114.3 0 0 1 283.4,294.0 L454.8,195.0 A114.3,114.3 0 0 1 569.2,195.0 Z" fill="none" stroke="url(#c-rim)" stroke-width="54" stroke-opacity=".58" filter="url(#c-rimBlur)"/>
+  </g>
+</svg>
