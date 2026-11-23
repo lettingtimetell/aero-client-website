@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FAQ · Aero Client</title>
+  <meta name="description" content="Answers about Aero Client: what it is, what you need, how sign-in and your data are handled, and playing on servers.">
+  <meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#0a0c1a">
+  <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <div class="wrap-prose page-top">
+    <a class="back-link" href="index.html" aria-label="Back to the Aero Client home page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>Aero Client</a>
+  </div>
+
+  <main id="main">
+    <div class="wrap-prose page-head">
+      <span class="eyebrow">FAQ</span>
+      <h1>Questions and answers</h1>
+      <p class="lede">Can't find your answer? Write to <a href="mailto:pvp@pvp.dog">pvp@pvp.dog</a>.</p>
+    </div>
+
+    <div class="wrap-prose">
+      <section class="faq-group" aria-labelledby="faq-about">
+        <h2 id="faq-about">About Aero Client</h2>
+
+        <details class="faq" open>
+          <summary>What is Aero Client?</summary>
+          <div class="answer">
+            <p>A client for Minecraft: Java Edition 1.8.9 multiplayer. You use it instead of the original 1.8.9 game program to play on 1.8.9 servers. It's written in Rust, runs on a modern GPU renderer, and has the mods PvP players use built in.</p>
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>Is it free?</summary>
+          <div class="answer">
+            <p>Yes. There are no ads, no paid features and no Aero Client account.</p>
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>Is it made by Mojang or Microsoft?</summary>
+          <div class="answer">
+            <p>No. Aero Client is an independent project. It is not an official Minecraft product, and it is not approved by or associated with Mojang or Microsoft.</p>
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>Does it include Minecraft?</summary>
+          <div class="answer">
+            <p>No. Aero Client contains none of Minecraft's game files and none of its source code. You need your own copy of Minecraft: Java Edition, and Aero Client uses the 1.8.9 files from it. To get them, start version 1.8.9 once from the official Minecraft Launcher.</p>
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>Which versions does it play?</summary>
+          <div class="answer">
+            <p>1.8.9, multiplayer only. It joins servers that accept 1.8.9 clients, including servers that accept several versions. There are no singleplayer worlds.</p>
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>Which systems does it run on?</summary>
+          <div class="answer">
+            <p>Windows 10 and 11, 64-bit, with a graphics card that supports Vulkan or DirectX 12. Other systems may come later.</p>
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>Can I add other mods or resource packs?</summary>
+          <div class="answer">
+            <p>Resource packs work as they do in 1.8.9, including the ones servers offer. Aero Client doesn't load Java mods: its mods are built in, and you switch them on and off in the mod menu (Right Shift).</p>
+          </div>
+        </details>
+      </section>
+
+      <section class="faq-group" aria-labelledby="faq-account">
+        <h2 id="faq-account">Your account and your data</h2>
+
+        <details class="faq">
+          <summary>Why do I have to sign in with Microsoft?</summary>
+          <div class="answer">
+            <p>Servers in online mode ask Mojang to confirm who you are and that you own the game. To answer, the client needs a Minecraft access token, and that comes from signing in with the Microsoft account that owns Minecraft: Java Edition.</p>
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>How do I sign in?</summary>
+          <div class="answer">
+            <p>In Aero Client, open the Accounts screen (the account corner at the top right of the title screen), choose Add account, then Sign in with Microsoft. The client shows a short code: choose Open page, enter the code on Microsoft's page and sign in there.</p>
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>Can Aero Client see my password?</summary>
+          <div class="answer">
+            <p>No. You sign in on Microsoft's own website with a one-time code that the client shows you. Aero Client only receives the tokens Microsoft gives it afterwards.</p>
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>Does Aero Client send my data anywhere?</summary>
+          <div class="answer">
+            <p>Only where playing needs it: to Microsoft and Xbox Live to sign you in, to Mojang to check your account and your server joins, and to the servers you join. We run no servers, and there's no telemetry, analytics or advertising. The full list is in the <a href="privacy.html#sent">privacy policy</a>.</p>
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>Can I play without owning Minecraft, or offline?</summary>
+          <div class="answer">
+            <p>No. Aero Client checks that your account owns Minecraft: Java Edition when you sign in, and public builds have no offline mode.</p>
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>How do I sign out and delete my data?</summary>
+          <div class="answer">
+            <p>Remove the account on the Accounts screen to delete its saved sign-in. To remove everything, also delete the <code>%APPDATA%\mc-rs</code> folder and the <code>%LOCALAPPDATA%\Aero Client</code> folder, where the launcher remembers where your Minecraft files are. You can also withdraw Aero Client's permission from your Microsoft account at <a href="https://account.live.com/consent/Manage" rel="noopener">account.live.com/consent/Manage</a>: choose Aero Client, then remove its permissions.</p>
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>What about child accounts and family settings?</summary>
+          <div class="answer">
+            <p>They apply as usual. If an account isn't allowed to play online, Microsoft or Mojang refuse the sign-in or the server join, and Aero Client shows their message. It never tries to get around these settings.</p>
+          </div>
+        </details>
+      </section>
+
+      <section class="faq-group" aria-labelledby="faq-playing">
+        <h2 id="faq-playing">Playing</h2>
+
+        <details class="faq">
+          <summary>Can I get banned for using Aero Client?</summary>
+          <div class="answer">
+            <p>We can't rule it out. Aero Client has no cheats: nothing aims, clicks or fights for you, and nothing shows what the game hides. But it is experimental: we aim to make it behave exactly like the original 1.8.9 client, and we can't guarantee that it does in every case. Every server decides which clients and mods it allows, and some check how clients behave. Use your own discretion: read a server's rules before you play, and switch off any mod it doesn't allow. You use Aero Client on servers at your own risk, and we are not responsible for bans.</p>
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>Does it look and play like the original?</summary>
+          <div class="answer">
+            <p>That's the aim. With every mod off, Aero Client is built to have the same movement, the same packets in the same order, and the same visuals as 1.8.9, and parity tests compare it with the original game's behavior. Tests can't cover every situation, though, so we can't guarantee that it matches in every case. The mods only change what they're switched on for, and a few start switched on (the mod menu marks them "On by default in Aero"); switch any of them off to get the original behavior. When you join a server, Aero Client tells it that it is Aero Client, where the original client says "vanilla" (the <a href="privacy.html#brand">privacy policy</a> says exactly what is sent).</p>
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>Where do my replays and videos go?</summary>
+          <div class="answer">
+            <p>Recordings stay on your PC, and exported videos are saved in your Videos folder, under Aero Client. Nothing is uploaded. A recording contains what you saw while it ran, including other players' names and chat, so think before you share one.</p>
+          </div>
+        </details>
+      </section>
+
+      <section class="faq-group" aria-labelledby="faq-project">
+        <h2 id="faq-project">The project</h2>
+
+        <details class="faq">
+          <summary>Where do I download it?</summary>
+          <div class="answer">
+            <p>From the Download button on the <a href="index.html">home page</a>. Before anything downloads, it reminds you that Aero Client is experimental, that we can't guarantee it behaves exactly like the original game, and that you use it on servers at your own discretion and risk.</p>
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>Where is the source code?</summary>
+          <div class="answer">
+            <p>On GitHub: <a href="https://github.com/lettingtimetell/aero-client" rel="noopener">github.com/lettingtimetell/aero-client</a>. Licence: <a href="https://www.gnu.org/licenses/gpl-3.0.html" rel="noopener">GPL-3.0-or-later</a>.</p>
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>Who makes Aero Client?</summary>
+          <div class="answer">
+            <p>Aero Client is made by pvps and contributors: it's open source, and anyone can contribute on GitHub. Write to <a href="mailto:pvp@pvp.dog">pvp@pvp.dog</a>.</p>
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>How do I report a bug or a security problem?</summary>
+          <div class="answer">
+            <p>Bugs: open an issue on <a href="https://github.com/lettingtimetell/aero-client/issues" rel="noopener">GitHub</a>. Security problems, especially anything about sign-in: please email <a href="mailto:pvp@pvp.dog">pvp@pvp.dog</a> privately instead of opening a public issue.</p>
+          </div>
+        </details>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html" aria-label="Aero Client home">
+          <span class="brand-name">Aero Client</span>
+        </a>
+        <p>A fast client for Minecraft: Java Edition 1.8.9 multiplayer.</p>
+      </div>
+      <nav aria-label="Client">
+        <h2>Client</h2>
+        <a href="index.html#features">Features</a>
+        <a href="index.html">Download</a>
+        <a href="faq.html">FAQ</a>
+      </nav>
+      <nav aria-label="Legal">
+        <h2>Legal</h2>
+        <a href="privacy.html">Privacy policy</a>
+        <a href="terms.html">Terms of use</a>
+      </nav>
+      <div>
+        <h2>Project</h2>
+        <a href="https://github.com/lettingtimetell/aero-client" rel="noopener">Source code on GitHub</a>
+        <a href="mailto:pvp@pvp.dog">pvp@pvp.dog</a>
+      </div>
+    </div>
+    <div class="wrap footer-legal">
+      <p class="disclaimer"><strong>NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.</strong></p>
+      <p>"Minecraft" is a trademark of Mojang AB. Microsoft and Xbox are trademarks of the Microsoft group of companies. Aero Client is made by pvps and contributors and published by pvps, who is responsible for it.</p>
+      <p>&copy; 2026 pvps and contributors. Screenshots show Aero Client.</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,1008 @@
+/* Aero Client website: one shared stylesheet for every page.
+   Dark and glassy, matching the client's own menus. No external requests: fonts are local.
+   No JavaScript anywhere: the download warning is an HTML popover, the panes are CSS animation. */
+
+/* ---------- Fonts (Inter, SIL Open Font License 1.1: see assets/fonts/inter/OFL.txt) ---------- */
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/inter/Inter_28pt-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/inter/Inter_28pt-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/inter/Inter_28pt-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+/* The client's title screen uses this cut for "Aero Client". */
+@font-face {
+  font-family: "Inter Display";
+  src: url("../fonts/inter/InterDisplay-LightItalic.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* ---------- Design tokens: change the look here ---------- */
+:root {
+  color-scheme: dark;
+
+  --bg: #0a0c1a;
+  --bg-raised: #10132a;
+  --text: #eef1ff;
+  --text-dim: #b4bbdd;
+  --text-faint: #8189b0;
+
+  --glass: rgba(255, 255, 255, 0.055);
+  --glass-strong: rgba(255, 255, 255, 0.09);
+  --glass-border: rgba(255, 255, 255, 0.13);
+  --glass-border-strong: rgba(255, 255, 255, 0.22);
+
+  --accent-text: #9cc0ff;
+  --crest-cyan: #7cf0ff;
+  --crest-pink: #ff8ad8;
+  --crest-gold: #ffd36b;
+  --warn: #ffcf6e;
+
+  --radius: 18px;
+  --radius-sm: 12px;
+  --radius-pill: 999px;
+  --wrap: 1120px;
+  --wrap-prose: 760px;
+  --shadow: 0 18px 50px rgba(0, 0, 0, 0.38);
+
+  --font: "Inter", "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Inter Display", "Inter", "Segoe UI", system-ui, sans-serif;
+  --font-mono: ui-monospace, "Cascadia Mono", Consolas, "SFMono-Regular", Menlo, monospace;
+}
+
+/* ---------- Base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 1.5rem;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(1200px 600px at 85% -10%, rgba(124, 240, 255, 0.10), transparent 60%),
+    radial-gradient(900px 500px at -10% 20%, rgba(255, 138, 216, 0.08), transparent 60%),
+    radial-gradient(900px 700px at 50% 110%, rgba(77, 139, 255, 0.10), transparent 60%),
+    var(--bg);
+  background-attachment: fixed;
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* The home page paints its own backgrounds section by section. */
+body.home {
+  background: var(--bg);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--accent-text);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: #c3d8ff;
+}
+
+:focus-visible {
+  outline: 2px solid var(--crest-cyan);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.2;
+  margin: 0 0 0.6em;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+h1 {
+  font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+}
+
+h2 {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+}
+
+h3 {
+  font-size: 1.15rem;
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+code,
+.mono {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  padding: 0.08em 0.4em;
+  word-break: break-word;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--glass-border);
+  margin: 2.5rem 0;
+}
+
+.wrap {
+  width: min(100% - 2.5rem, var(--wrap));
+  margin-inline: auto;
+}
+
+.wrap-prose {
+  width: min(100% - 2.5rem, var(--wrap-prose));
+  margin-inline: auto;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.skip {
+  position: absolute;
+  left: 1rem;
+  top: -3rem;
+  z-index: 100;
+  background: #2f6ff0;
+  color: #fff;
+  padding: 0.5rem 0.9rem;
+  border-radius: var(--radius-sm);
+}
+
+.skip:focus {
+  top: 1rem;
+}
+
+/* ---------- Wordmark and the way home (there is no top bar) ---------- */
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--text);
+  text-decoration: none;
+  flex: none;
+}
+
+.brand:hover {
+  color: var(--text);
+}
+
+.brand-name {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 300;
+  font-size: 1.45rem;
+  letter-spacing: 0.005em;
+  white-space: nowrap;
+}
+
+.page-top {
+  padding-top: clamp(1.4rem, 3vw, 2rem);
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-dim);
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 300;
+  font-size: 1.4rem;
+}
+
+.back-link:hover {
+  color: var(--text);
+}
+
+.back-link svg {
+  width: 1rem;
+  height: 1rem;
+  flex: none;
+}
+
+/* ---------- Buttons ---------- */
+/* Every button is the same clear glass, Download included. */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  font: inherit;
+  font-weight: 500;
+  color: var(--text);
+  text-decoration: none;
+  background: var(--glass-strong);
+  border: 1px solid var(--glass-border-strong);
+  border-radius: var(--radius-sm);
+  padding: 0.65rem 1.15rem;
+  line-height: 1.2;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+  white-space: nowrap;
+}
+
+.btn:hover {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.btn-lg {
+  padding: 0.9rem 1.5rem;
+  font-size: 1.05rem;
+  border-radius: 14px;
+}
+
+.btn svg {
+  width: 1.15em;
+  height: 1.15em;
+  flex: none;
+}
+
+/* ---------- Glass panels ---------- */
+.glass {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.035));
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+}
+
+/* ---------- Hero: the sky, the panes, the name ---------- */
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: grid;
+  align-items: center;
+  /* The whole first screen, plus a little more that shows as soon as you scroll. The bottom
+     padding keeps the content centred in the first screen. */
+  min-height: 108vh;
+  min-height: calc(100svh + 8vh);
+  padding: 3.5rem 0 8vh;
+  text-align: center;
+}
+
+/* The hero picture: the sky, the glass pane tower, the clouds in front, the film grain and the
+   fade into the next section, baked into one image per screen size. The live 3D version it's made
+   from lives in work/hero-studio/ (see its README): change it there, then run render_plates.py.
+   A still picture costs almost nothing to scroll; the live version cost about 20 ms a frame.
+   Each image is rendered from the live hero at that screen size, so it looks the same. */
+.hero-plate {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--bg) url("../img/hero-1920.webp") center bottom / cover no-repeat;
+}
+
+@media (max-width: 1600px) {
+  .hero-plate {
+    background-image: url("../img/hero-1440.webp");
+    background-image: image-set(url("../img/hero-1440.webp") 1x, url("../img/hero-1440@2x.webp") 2x);
+  }
+}
+
+@media (min-width: 2201px) {
+  .hero-plate {
+    background-image: url("../img/hero-2560.webp");
+  }
+}
+
+@media (max-aspect-ratio: 4 / 5) {
+  .hero-plate {
+    background-image: url("../img/hero-portrait.webp");
+  }
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  justify-items: center;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(3.4rem, 9vw, 6.6rem);
+  letter-spacing: -0.01em;
+  line-height: 1;
+  margin: 0 0 0.3em;
+  text-shadow: 0 1px 3px rgba(6, 10, 38, 0.55), 0 2px 28px rgba(6, 10, 38, 0.45);
+}
+
+.hero-lede {
+  font-size: clamp(1.08rem, 1.9vw, 1.28rem);
+  color: rgba(240, 244, 255, 0.9);
+  max-width: 34em;
+  margin: 0 auto 1.9rem;
+  text-shadow: 0 1px 2px rgba(6, 10, 38, 0.8), 0 1px 14px rgba(6, 10, 38, 0.55);
+}
+
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.hero .cta-row {
+  justify-content: center;
+}
+
+/* Over the sky the clear buttons get a frost, so they read on light and dark clouds alike. */
+.hero .btn {
+  background: rgba(255, 255, 255, 0.13);
+  border-color: rgba(255, 255, 255, 0.38);
+  box-shadow: 0 10px 30px rgba(6, 10, 38, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
+  backdrop-filter: blur(12px) saturate(140%);
+  text-shadow: 0 1px 8px rgba(6, 10, 38, 0.35);
+}
+
+.hero .btn:hover {
+  background: rgba(255, 255, 255, 0.22);
+  border-color: rgba(255, 255, 255, 0.55);
+}
+
+.hero-note {
+  color: rgba(232, 238, 255, 0.82);
+  font-size: 0.92rem;
+  margin: 1.3rem 0 0;
+  text-shadow: 0 1px 2px rgba(6, 10, 38, 0.8), 0 1px 10px rgba(6, 10, 38, 0.6);
+}
+
+.notice-line {
+  font-size: 0.76rem;
+  letter-spacing: 0.04em;
+  color: rgba(225, 232, 255, 0.72);
+  margin: 0.7rem 0 0;
+  text-shadow: 0 1px 2px rgba(6, 10, 38, 0.8), 0 1px 10px rgba(6, 10, 38, 0.6);
+}
+
+/* ---------- Sections ---------- */
+.section {
+  padding: clamp(3.5rem, 7vw, 5.5rem) 0;
+}
+
+.section-head {
+  max-width: 44rem;
+  margin-bottom: 2.2rem;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--crest-cyan);
+  margin-bottom: 0.7rem;
+}
+
+.lede {
+  font-size: 1.12rem;
+  color: var(--text-dim);
+}
+
+.page-head {
+  padding: clamp(1.6rem, 4vw, 2.6rem) 0 1.5rem;
+}
+
+.page-head h1 {
+  margin-bottom: 0.4em;
+}
+
+/* Home page bands: a picture from the client behind each lower section, dimmed for reading and
+   faded out at the top and bottom edges so the bands melt into each other. */
+.band {
+  position: relative;
+  isolation: isolate;
+  padding: clamp(5rem, 10vw, 8rem) 0;
+}
+
+.band::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--band-image);
+  -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 16%, #000 84%, transparent 100%);
+  mask-image: linear-gradient(180deg, transparent 0, #000 16%, #000 84%, transparent 100%);
+}
+
+.band-shore {
+  --band-image:
+    linear-gradient(180deg, rgba(10, 12, 26, 0.25), rgba(10, 12, 26, 0.45)),
+    url("../img/bg-shore.jpg") center / cover no-repeat;
+}
+
+.band-greenhouse {
+  --band-image:
+    linear-gradient(180deg, rgba(8, 12, 26, 0.5), rgba(8, 12, 26, 0.6)),
+    url("../img/bg-greenhouse.jpg") center / cover no-repeat;
+}
+
+@media (max-width: 960px) {
+  .band-shore {
+    --band-image:
+      linear-gradient(180deg, rgba(10, 12, 26, 0.25), rgba(10, 12, 26, 0.45)),
+      url("../img/bg-shore-960.jpg") center / cover no-repeat;
+  }
+
+  .band-greenhouse {
+    --band-image:
+      linear-gradient(180deg, rgba(8, 12, 26, 0.5), rgba(8, 12, 26, 0.6)),
+      url("../img/bg-greenhouse-960.jpg") center / cover no-repeat;
+  }
+}
+
+/* ---------- Feature cards ---------- */
+.grid {
+  display: grid;
+  gap: 1.1rem;
+}
+
+.grid-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.card {
+  padding: 1.4rem 1.4rem 1.2rem;
+}
+
+.card h3 {
+  margin-bottom: 0.45em;
+}
+
+.card p {
+  color: var(--text-dim);
+  margin-bottom: 0.6em;
+}
+
+.card p:last-child {
+  margin-bottom: 0;
+}
+
+.icon {
+  display: inline-grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  margin-bottom: 0.9rem;
+  color: var(--text);
+  background: linear-gradient(135deg, rgba(124, 240, 255, 0.22), rgba(255, 138, 216, 0.18) 55%, rgba(255, 211, 107, 0.18));
+  border: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+/* ---------- Showcase rows (image + text) ---------- */
+.showcase {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 3.5rem;
+}
+
+.showcase:last-child {
+  margin-bottom: 0;
+}
+
+/* For very wide pictures: text on top, picture full width below. */
+.showcase.stack {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.2rem;
+}
+
+.showcase.stack .showcase-text {
+  max-width: 46rem;
+}
+
+.showcase-media {
+  margin: 0;
+  padding: 8px;
+}
+
+.showcase-media img {
+  border-radius: 12px;
+  width: 100%;
+}
+
+.showcase-text {
+  padding: 1.5rem 1.6rem 1.3rem;
+}
+
+.showcase-text p,
+.showcase-text li {
+  color: var(--text-dim);
+}
+
+.showcase-text p:last-child,
+.showcase-text ul:last-child {
+  margin-bottom: 0;
+}
+
+.ticks {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1em;
+}
+
+.ticks li {
+  position: relative;
+  padding-left: 1.6rem;
+  margin-bottom: 0.45rem;
+}
+
+.ticks li::before {
+  content: "";
+  position: absolute;
+  left: 0.15rem;
+  top: 0.55em;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--crest-cyan), var(--crest-pink));
+}
+
+/* The FAQ, from the home page. */
+.faq-prompt {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+  margin-top: clamp(3.5rem, 7vw, 5rem);
+  padding: 1.5rem 1.8rem;
+}
+
+.faq-prompt h2 {
+  font-size: 1.45rem;
+  margin: 0 0 0.2rem;
+}
+
+.faq-prompt p {
+  color: var(--text-dim);
+  margin: 0;
+}
+
+/* ---------- The download warning (an HTML popover: Esc or a click outside closes it) ---------- */
+.modal {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  width: min(100% - 2rem, 33rem);
+  height: fit-content;
+  max-height: calc(100% - 2rem);
+  overflow: auto;
+  padding: clamp(1.4rem, 4vw, 2rem);
+  color: var(--text);
+  text-align: left;
+  border: 1px solid var(--glass-border-strong);
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, rgba(34, 40, 78, 0.94), rgba(14, 17, 38, 0.96));
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.14);
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+}
+
+.modal::backdrop {
+  background: rgba(4, 6, 14, 0.62);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+}
+
+.modal:popover-open {
+  animation: modal-in 0.18s ease-out;
+}
+
+@keyframes modal-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+}
+
+.modal-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  color: var(--warn);
+  background: rgba(255, 207, 110, 0.12);
+  border: 1px solid rgba(255, 207, 110, 0.35);
+}
+
+.modal-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.modal h2 {
+  font-size: 1.4rem;
+  margin-bottom: 0.6rem;
+}
+
+.modal p {
+  color: var(--text-dim);
+}
+
+.modal p strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.modal .cta-row {
+  margin-top: 1.5rem;
+}
+
+/* ---------- Tables ---------- */
+.table-wrap {
+  overflow-x: auto;
+  border-radius: var(--radius);
+  border: 1px solid var(--glass-border);
+  background: var(--glass);
+  margin: 0 0 1.5rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+th,
+td {
+  text-align: left;
+  vertical-align: top;
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+th {
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+tr:last-child td {
+  border-bottom: 0;
+}
+
+td {
+  color: var(--text-dim);
+}
+
+td:first-child {
+  color: var(--text);
+}
+
+/* ---------- Prose pages (privacy, terms) ---------- */
+.prose h2 {
+  font-size: 1.45rem;
+  margin-top: 2.4rem;
+  padding-top: 0.4rem;
+}
+
+.prose h3 {
+  margin-top: 1.6rem;
+}
+
+.prose p,
+.prose li {
+  color: var(--text-dim);
+}
+
+.prose strong {
+  color: var(--text);
+}
+
+.prose ul,
+.prose ol {
+  padding-left: 1.3rem;
+  margin: 0 0 1em;
+}
+
+.prose li {
+  margin-bottom: 0.4rem;
+}
+
+.meta {
+  color: var(--text-faint);
+  font-size: 0.92rem;
+}
+
+.toc {
+  padding: 1.1rem 1.3rem;
+  margin: 0 0 2rem;
+}
+
+.toc h2 {
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin: 0 0 0.6rem;
+  padding: 0;
+}
+
+.toc ol {
+  margin: 0;
+  padding-left: 1.2rem;
+  columns: 2;
+  column-gap: 2rem;
+}
+
+.toc li {
+  margin-bottom: 0.25rem;
+  break-inside: avoid;
+}
+
+.toc a {
+  color: var(--text-dim);
+  text-decoration: none;
+}
+
+.toc a:hover {
+  color: var(--text);
+  text-decoration: underline;
+}
+
+.caps {
+  text-transform: uppercase;
+}
+
+/* ---------- FAQ ---------- */
+.faq-group {
+  margin-bottom: 2.4rem;
+}
+
+.faq-group > h2 {
+  font-size: 1.15rem;
+  color: var(--text-faint);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.9rem;
+}
+
+details.faq {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-sm);
+  margin-bottom: 0.7rem;
+}
+
+details.faq[open] {
+  background: var(--glass-strong);
+  border-color: var(--glass-border-strong);
+}
+
+details.faq summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 1rem 3rem 1rem 1.2rem;
+  font-weight: 500;
+  position: relative;
+}
+
+details.faq summary::-webkit-details-marker {
+  display: none;
+}
+
+details.faq summary::after {
+  content: "+";
+  position: absolute;
+  right: 1.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.3rem;
+  color: var(--text-faint);
+}
+
+details.faq[open] summary::after {
+  content: "\2212";
+}
+
+details.faq .answer {
+  padding: 0 1.2rem 1.1rem;
+  color: var(--text-dim);
+}
+
+details.faq .answer p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  margin-top: 4rem;
+  border-top: 1px solid var(--glass-border);
+  background: rgba(6, 8, 18, 0.6);
+  padding: 3rem 0 2rem;
+  font-size: 0.93rem;
+}
+
+.home .site-footer {
+  margin-top: 0;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1.2fr;
+  gap: 2rem;
+}
+
+.footer-grid h2 {
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin: 0.2rem 0 0.8rem;
+}
+
+/* .footer-link: the home page's footer Download is a button (it opens the warning), so it
+   gets the links' look. */
+.footer-grid a,
+.footer-grid .footer-link {
+  display: block;
+  color: var(--text-dim);
+  text-decoration: none;
+  margin-bottom: 0.45rem;
+}
+
+.footer-link {
+  font: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+}
+
+.footer-grid a:hover,
+.footer-grid .footer-link:hover {
+  color: var(--text);
+}
+
+.footer-grid .brand {
+  display: inline-flex;
+}
+
+.footer-brand p {
+  color: var(--text-faint);
+  margin-top: 0.8rem;
+  max-width: 22rem;
+}
+
+.footer-legal {
+  margin-top: 2.4rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text-faint);
+  font-size: 0.85rem;
+}
+
+.footer-legal p {
+  margin-bottom: 0.5rem;
+}
+
+.disclaimer {
+  color: var(--text-dim);
+  letter-spacing: 0.03em;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 960px) {
+  /* minmax(0, 1fr): a wide button or code span must not widen the page. */
+  .showcase {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero .cta-row .btn,
+  .modal .cta-row .btn {
+    width: 100%;
+    white-space: normal;
+  }
+
+  .btn-lg {
+    font-size: 1rem;
+  }
+
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .toc ol {
+    columns: 1;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    transition: none !important;
+  }
+
+
+  .modal:popover-open {
+    animation: none;
+  }
+}
