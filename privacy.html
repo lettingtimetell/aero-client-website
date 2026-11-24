@@ -23,7 +23,7 @@
     <div class="page-head">
       <span class="eyebrow">Legal</span>
       <h1>Privacy policy</h1>
-      <p class="meta">Effective date: 22 November 2026.</p>
+      <p class="meta">Effective date: 24 November 2026.</p>
     </div>
 
     <nav class="toc glass" aria-labelledby="toc-title">
@@ -47,7 +47,7 @@
 
     <article class="prose">
       <h2 id="short">1. The short version</h2>
-      <p><strong>Aero Client doesn't collect your data.</strong> We run no servers for it, and it has no accounts of its own, no analytics, no telemetry and no ads. To let you play, it signs you in with Microsoft and talks to Microsoft, Xbox Live, Mojang and the servers you add to your list or join. What it saves stays on your PC, and you can delete it at any time.</p>
+      <p><strong>Aero Client doesn't collect your data.</strong> It has no accounts of its own, no analytics, no telemetry and no ads, and no server of ours sits between you and anything. To let you play, it signs you in with Microsoft and talks to Microsoft, Xbox Live, Mojang and the servers in your server list or that you join. New players' lists start with one server, Mega Skywars, which we run (see <a href="#collect">section 6</a>). What Aero Client saves stays on your PC, and you can delete it at any time.</p>
 
       <h2 id="who">2. Who we are</h2>
       <p>Aero Client is a free, open-source client for Minecraft: Java Edition 1.8.9. It is made by pvps and the project's contributors, and published by pvps ("we", "us"), who is responsible for this policy. You can reach us at <a href="mailto:pvp@pvp.dog">pvp@pvp.dog</a>.</p>
@@ -110,17 +110,19 @@
         <li><strong>Xbox Live</strong> (<code>user.auth.xboxlive.com</code>, <code>xsts.auth.xboxlive.com</code>): your Microsoft and Xbox Live tokens, to confirm your account.</li>
         <li><strong>Minecraft's services and Mojang</strong> (<code>api.minecraftservices.com</code>, <code>sessionserver.mojang.com</code>): your tokens, your UUID, and a one-time hash for each online-mode server you join, to check that you own the game, to read your profile, and to confirm your joins to servers.</li>
         <li><strong>Mojang's skin server</strong> (<code>textures.minecraft.net</code>): requests for skin and cape images. No account data.</li>
-        <li><strong>GitHub</strong> (<code>api.github.com</code>), only in the Aero Client download: when the title screen opens, at most once every six hours, a request for the latest release, so Aero Client can tell you when an update is out. It names Aero Client and its version, nothing about you. If you choose Update, the new version comes from GitHub's file servers. You can turn the check off in Mods › Chat &amp; Menus › Aero Title Screen › Check for updates.</li>
+        <li><strong>GitHub</strong> (<code>api.github.com</code>), only in the versions you download from us (the installer and the portable zip): when the title screen opens, at most once every six hours, a request for the latest release, so Aero Client can tell you when an update is out. It names Aero Client and its version, nothing about you. If you choose Update, the new version comes from GitHub's file servers. You can turn the check off in Mods › Chat &amp; Menus › Aero Title Screen › Check for updates.</li>
         <li><strong>The servers you join:</strong> what any 1.8.9 client sends, such as your name, UUID, movement, actions and chat. Each server's own policy applies.</li>
         <li id="brand"><strong>Aero Client's name, to the servers you join:</strong> each time you join a server, Aero Client sends it the word <code>Aero</code> in the message where the original 1.8.9 client sends <code>vanilla</code> (Minecraft's own <code>MC|Brand</code> message), so the server can tell which client you use. That word is all it contains: no version, no settings, nothing about you.</li>
-        <li><strong>The servers in your server list:</strong> when you open Multiplayer, Aero Client asks each server in your list for its status (its message, icon and player count), as the original 1.8.9 client does. These servers see your IP address even if you don't join them. No account data is sent.</li>
+        <li><strong>The servers in your server list:</strong> when you open Multiplayer, Aero Client asks each server in your list for its status (its message, icon and player count), as the original 1.8.9 client does. These servers see your IP address even if you don't join them. No account data is sent. A new player's list starts with Mega Skywars (<code>megaskywars.com</code>), a server we run: see <a href="#collect">section 6</a>.</li>
         <li><strong>Your DNS provider:</strong> to find a server, Aero Client looks up its address through your system's DNS, including the server record Minecraft uses, as the original client does. Whoever answers those lookups sees the server names.</li>
         <li><strong>Resource-pack addresses</strong>, only when a server offers a resource pack and you accept it: your name, UUID and game version, as the original 1.8.9 client sends. Never your tokens.</li>
+        <li><strong>Discord</strong>, only if you click the Discord button on the title screen: Aero Client asks your web browser to open our Discord invite page, and sends nothing itself. Discord's own privacy policy applies there.</li>
       </ul>
       <p>Every service you connect to can see your IP address; that's how internet connections work.</p>
 
       <h2 id="collect">6. What we collect</h2>
-      <p><strong>Nothing.</strong> The client never contacts us. It has no analytics, telemetry, crash reporting, advertising or tracking, and we never receive your tokens, account details, gameplay, files or IP address. We don't sell or share personal information, because we don't have any.</p>
+      <p><strong>From Aero Client itself: nothing.</strong> It has no analytics, telemetry, crash reporting, advertising or tracking, and it never sends us your tokens, account details, settings or files. We don't sell or share personal information.</p>
+      <p id="mega-skywars"><strong>Mega Skywars.</strong> We also run Mega Skywars (<code>megaskywars.com</code>), a Minecraft server, and a new player's server list starts with it. While it's in your list, opening Multiplayer asks it for its status, as for every server in your list, so it sees your IP address. If you join it, it receives what every server receives: your name, UUID, IP address, what you do in the game and your chat. Like most Minecraft servers, it keeps logs of who joined (name, UUID and IP address) and of chat, and game statistics for your UUID. Aero Client gives it nothing extra, and once you remove it from your list, Aero Client never contacts it again.</p>
       <p>If you email us or open an issue on GitHub, we receive what you send (for example your email address and your message) and use it only to answer you. We keep emails so we can follow up, and we delete yours whenever you ask. GitHub's own privacy statement applies to GitHub.</p>
 
       <h2 id="website">7. This website</h2>
@@ -136,7 +138,7 @@
       </ul>
 
       <h2 id="retention">9. How long it's kept</h2>
-      <p>Everything in section 4 stays on your PC until you delete it. The Minecraft access token expires after about a day. Microsoft decides how long a refresh token stays valid, and you can withdraw it at any time (see below). Aero Client has no installer, so uninstalling is manual: remove your accounts, then delete the Aero Client folder, the <code>%APPDATA%\mc-rs</code> folder and the <code>%LOCALAPPDATA%\Aero Client</code> folder (where the launcher remembers where your Minecraft files are). We hold no copies of anything.</p>
+      <p>Everything in section 4 stays on your PC until you delete it. The Minecraft access token expires after about a day. Microsoft decides how long a refresh token stays valid, and you can withdraw it at any time (see below). To remove Aero Client completely, remove your accounts, then uninstall it (the installed version from Settings › Apps, which asks whether to delete your settings, screenshots and replays too; the portable version by deleting its folder), and delete the <code>%APPDATA%\mc-rs</code> folder and the <code>%LOCALAPPDATA%\Aero Client</code> folder (where Aero Client remembers where your Minecraft files are). Apart from what Mega Skywars keeps if you play there (<a href="#mega-skywars">section 6</a>), we hold no copies of anything.</p>
 
       <h2 id="choices">10. Your choices and rights</h2>
       <ul>
@@ -148,7 +150,7 @@
       <p>Depending on where you live (for example under the GDPR in the European Union and the United Kingdom, or under US state laws such as California's), you may have rights to access, correct, delete or receive a copy of personal data about you, to object to its use, and to complain to a data protection authority. We hold no personal data about our users apart from messages you send us; ask us at <a href="mailto:pvp@pvp.dog">pvp@pvp.dog</a> and we'll answer within 30 days.</p>
 
       <h2 id="children">11. Children</h2>
-      <p>Aero Client is for players who can play Minecraft: Java Edition with their own Microsoft account. Microsoft's account rules and Xbox family settings apply, including parents' choices about online play: if an account isn't allowed to play online, Microsoft or Mojang refuse it and Aero Client shows their message. We don't collect personal information from anyone, children included.</p>
+      <p>Aero Client is for players who can play Minecraft: Java Edition with their own Microsoft account. Microsoft's account rules and Xbox family settings apply, including parents' choices about online play: if an account isn't allowed to play online, Microsoft or Mojang refuse it and Aero Client shows their message. Apart from what Mega Skywars receives as a game server (<a href="#mega-skywars">section 6</a>), we don't collect personal information from anyone, children included.</p>
 
       <h2 id="changes">12. Changes</h2>
       <p>When this policy changes, we'll update it here with a new date, and point out important changes in the release notes. Earlier versions stay visible in the project's public history.</p>

@@ -107,7 +107,7 @@
         <details class="faq">
           <summary>Does Aero Client send my data anywhere?</summary>
           <div class="answer">
-            <p>Only where playing needs it: to Microsoft and Xbox Live to sign you in, to Mojang to check your account and your server joins, and to the servers you join. We run no servers, and there's no telemetry, analytics or advertising. The full list is in the <a href="privacy.html#sent">privacy policy</a>.</p>
+            <p>Only where playing needs it: to Microsoft and Xbox Live to sign you in, to Mojang to check your account and your server joins, and to the servers you join or keep in your server list. There's no telemetry, analytics or advertising, and Aero Client has no server of its own. The one server of ours it can talk to is Mega Skywars, a Minecraft server that new players find in their server list; remove it if you don't want it. The full list is in the <a href="privacy.html#sent">privacy policy</a>.</p>
           </div>
         </details>
 
@@ -121,7 +121,16 @@
         <details class="faq">
           <summary>How do I sign out and delete my data?</summary>
           <div class="answer">
-            <p>Remove the account on the Accounts screen to delete its saved sign-in. To remove everything, also delete the <code>%APPDATA%\mc-rs</code> folder and the <code>%LOCALAPPDATA%\Aero Client</code> folder, where the launcher remembers where your Minecraft files are. You can also withdraw Aero Client's permission from your Microsoft account at <a href="https://account.live.com/consent/Manage" rel="noopener">account.live.com/consent/Manage</a>: choose Aero Client, then remove its permissions.</p>
+            <p>Remove the account on the Accounts screen to delete its saved sign-in. To remove everything, uninstall Aero Client (see below), then also delete the <code>%APPDATA%\mc-rs</code> folder and the <code>%LOCALAPPDATA%\Aero Client</code> folder, where Aero Client remembers where your Minecraft files are. You can also withdraw Aero Client's permission from your Microsoft account at <a href="https://account.live.com/consent/Manage" rel="noopener">account.live.com/consent/Manage</a>: choose Aero Client, then remove its permissions.</p>
+          </div>
+        </details>
+
+        <details class="faq" id="uninstall">
+          <summary>How do I uninstall it?</summary>
+          <div class="answer">
+            <p><strong>If you used the installer:</strong> open Settings, then Apps, then Installed apps, find Aero Client and choose Uninstall. It asks whether to delete your settings, screenshots and replays too; say no to keep them for later.</p>
+            <p><strong>If you use the portable version:</strong> delete its folder.</p>
+            <p>Either way, your saved sign-ins stay in <code>%APPDATA%\mc-rs</code> until you remove the accounts on the Accounts screen or delete that folder.</p>
           </div>
         </details>
 
@@ -164,7 +173,19 @@
         <details class="faq">
           <summary>Where do I download it?</summary>
           <div class="answer">
-            <p>From the Download button on the <a href="index.html">home page</a>. Before anything downloads, it reminds you that Aero Client is experimental, that we can't guarantee it behaves exactly like the original game, and that you use it on servers at your own discretion and risk.</p>
+            <p>From the Download button on the <a href="index.html">home page</a>. Before anything downloads, it reminds you that Aero Client is experimental, that we can't guarantee it behaves exactly like the original game, and that you use it on servers at your own discretion and risk. Then choose a version:</p>
+            <ul>
+              <li><strong>Installer:</strong> installs Aero Client for your Windows account, in a folder you can choose, with shortcuts on the desktop and in the Start menu. It doesn't need administrator rights.</li>
+              <li><strong>Portable:</strong> a zip you unpack into any folder, even a USB stick, and start from there. Nothing is installed.</li>
+            </ul>
+            <p>Both are the same client, both always come in the latest version, and both tell you when an update is out.</p>
+          </div>
+        </details>
+
+        <details class="faq" id="windows-warning">
+          <summary>Windows says it protected my PC. Is Aero Client safe?</summary>
+          <div class="answer">
+            <p>Windows SmartScreen warns about programs it hasn't seen many people download yet, and Aero Client is new, so you may see "Windows protected your PC" the first time. If you downloaded it from this website or from our <a href="https://github.com/lettingtimetell/aero-client" rel="noopener">GitHub page</a>, choose More info, then Run anyway. Its whole source code is public there, so anyone can check what it does. If your antivirus flags it, please tell us at <a href="mailto:pvp@pvp.dog">pvp@pvp.dog</a>.</p>
           </div>
         </details>
 

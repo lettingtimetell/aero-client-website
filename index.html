@@ -174,7 +174,9 @@
     </div>
   </footer>
 
-  <!-- The download warning. Every Download button opens it; nothing downloads until "I understand". -->
+  <!-- The download warning. Every Download button opens it; nothing downloads until the player
+       picks a version below the warning. Both links always fetch the newest release's file
+       (GitHub's releases/latest/download/<name>), so the release's asset names must not change. -->
   <div class="modal" id="download" popover role="dialog" aria-labelledby="download-title" aria-describedby="download-text">
     <span class="modal-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.9 1.8 18.2A2 2 0 0 0 3.5 21h17a2 2 0 0 0 1.7-2.8L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4M12 17h.01"/></svg></span>
     <h2 id="download-title">Before you download</h2>
@@ -182,11 +184,19 @@
       <p><strong>Aero Client is experimental.</strong> We aim to make it behave exactly like the original 1.8.9 client and test it against that client, but we can't guarantee that it matches in every case.</p>
       <p>Servers decide which clients and mods they allow, and some check how clients behave. Use your own discretion when you play on servers with Aero Client: read each server's rules, and switch off any mod it doesn't allow. You play on servers at your own risk, and we are not responsible for bans or any other action a server takes against your account.</p>
     </div>
-    <div class="cta-row">
-      <a class="btn btn-lg" href="https://github.com/lettingtimetell/aero-client/releases/latest" rel="noopener" autofocus>
+    <p class="choose-label" id="download-choose">I understand. Download:</p>
+    <div class="download-choices" role="group" aria-labelledby="download-choose">
+      <a class="btn btn-lg download-choice" href="https://github.com/lettingtimetell/aero-client/releases/latest/download/Aero-Client-Setup.exe" rel="noopener" autofocus>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>
-        I understand, download
+        <span><strong>Installer</strong><small>Desktop and Start menu shortcuts</small></span>
       </a>
+      <a class="btn btn-lg download-choice" href="https://github.com/lettingtimetell/aero-client/releases/latest/download/Aero-Client-Portable.zip" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M11 6h1M11 9h1M11 12h1M10 15h3v3h-3z"/></svg>
+        <span><strong>Portable</strong><small>A zip that runs from any folder</small></span>
+      </a>
+    </div>
+    <p class="modal-fine">Both are the latest version, straight from GitHub, for Windows 10 and 11 (64&#8209;bit). If Windows warns you about an unrecognized app, see <a href="faq.html#windows-warning">the FAQ</a>.</p>
+    <div class="cta-row">
       <button type="button" class="btn btn-lg" popovertarget="download" popovertargetaction="hide">Cancel</button>
     </div>
   </div>
